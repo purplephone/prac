@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <style media="screen">
+      .dv{
+        width:100px;
+        height:100px;
+        background-color:blue;
+        margin:5px;
+        font-size:50px;
+        display:flex;
+      }
+    </style>
+    <title></title>
+  </head>
+  <body>
+    <div style="border:1px solid black; padding:20px; display:flex;">
+      <div class="dv" id="rr"> </div>
+      <div class="dv" id="or"> </div>
+      <div class="dv" id="gr"> </div>
+      <div class="dv" id=">r">></div>
+    </div>
+    <script type="text/javascript">
+      function infinite() {
+      var count = 0;
+      var time=setInterval(Timer,1000);
+      function Timer(){
+        if(count % 27 == 0){
+          Blue();
+          Red();
+        }
+        else if(count % 27 == 10){
+          Blue();
+          Orange();
+        }
+        else if(count % 27 == 11){
+          Blue();
+          Green();
+        }
+        else if(count % 27 == 21){
+          Right();
+        }
+        else if(count % 27 == 26){
+          Blue();
+          Orange();
+        }
+        count++;
+      }
+
+      function Blue(){
+        let bs = document.getElementsByClassName("dv");
+        for(let i = 0; i < bs.length; i++){
+          bs.item(i).style.backgroundColor= "blue";
+        }
+      }
+
+      function Red(){
+        document.getElementById("rr").style.backgroundColor="red";
+      }
+
+      function Orange(){
+        document.getElementById("or").style.backgroundColor="orange";
+      }
+
+      function Green(){
+        document.getElementById("gr").style.backgroundColor="green";
+      }
+
+      function Right(){
+        document.getElementById(">r").style.backgroundColor="green";
+      }
+      }
+      document.addEventListener("DOMContentLoaded", infinite);
+    </script>
+  </body>
+</html>
